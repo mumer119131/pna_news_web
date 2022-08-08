@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --color-primary : #197278;
+    --color-secondary : #283D3B;
+
+    --transition : 500ms linear;
+}
+body{
+    overflow-x:hidden;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+}
+nav h2{
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+}
+nav ul{
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+main h1{
+    text-align: center;
+    letter-spacing: 2px;
+}
+main > p{
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: 300;
+}
+.news__container{
+    padding: 5rem;
+}
+
+.news__container h2{
+    text-transform: capitalize;
+    margin-top: 2rem;
+}
+.news__container ul{
+    list-style-type:decimal;
+    list-style-position:outside;
+    margin-left: 2rem;
+}
+.news__container ul li{
+    font-weight: 300;
+    line-height: 2.5rem;
+}
+.spinner__container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.spinner__container h3{
+    margin-top: 2rem;
+    color: #303030;
+    font-size: 1.4rem;
+    animation: letter-space-animation 1s linear infinite;
+}
+.spinner {
+    width: 15rem;
+    height: 15rem;
+    display: grid;
+    color: #303030;
+    background: linear-gradient(currentColor 0 0) center/100% 5.3px,
+           linear-gradient(currentColor 0 0) center/5.3px 100%;
+    background-repeat: no-repeat;
+    animation: spinner-slq5ph 1.6s infinite;
+ }
+ 
+ .spinner::before,
+ .spinner::after {
+    content: "";
+    grid-area: 1/1;
+    background: repeating-conic-gradient(#0000 0 35deg,currentColor 0 90deg);
+    -webkit-mask : radial-gradient(farthest-side,#0000 calc(100% - 5.3px),#000 0);
+    border-radius: 50%;
+ }
+ 
+ .spinner::after {
+    margin: 20%;
+ }
+
+ .tooltip{
+    position: absolute;
+    background-color: #3e3e3e;
+    top: 5rem;
+    right: 0;
+    padding: 1rem 2rem;
+    border-radius: 8px 0 0 8px;
+    transition: 1s linear;
+    transform: translateX(23rem);
+ }
+ .tooltip p{
+    color: white;
+ }
+
+
+ 
+ @keyframes spinner-slq5ph {
+    100% {
+       transform: rotate(1turn);
+    }
+ }
+ @keyframes letter-space-animation {
+    0%{
+        letter-spacing: 0px;
+    }50%{
+        letter-spacing: 4px;
+    }100%{
+        letter-spacing: 0px;
+    }
+    
+ }
+
+ /* ==================MEDIA QURIES (MEDIUM DEVICES)=============== */
+
+@media screen and (max-width:1024px){
+    .news__container {
+        padding: 3rem;
+    }
+    
+    .tooltip{
+        display: none;
+    }
+}
+
+/* ==================MEDIA QURIES (SMALL DEVICES)=============== */
+
+@media screen and (max-width:600px) {
+    header nav ul{
+        display: none;
+    }
+    .news__container{
+        padding: 2rem;
+    }
+    .news__container ul {
+        margin-left: 0;
+    }
+    .tooltip{
+        display: none;
+    }
+    
+}

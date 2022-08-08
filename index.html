@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - TEC News</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>● PNA News</h2>
+            <ul>
+                <li><a href="#" onclick="tooltip()">Home</a></li>
+                <li><a href="#" onclick="tooltip()">News</a></li>
+                <li><a href="#" onclick="tooltip()">Agents</a></li>
+                <li><a href="#" onclick="tooltip()">Signup</a></li>
+                <li><a href="#" onclick="tooltip()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>- Don't miss and stay updated with all the -</p>
+        <h1>Latest News</h1>
+        <div class="news__container" id="news_container">
+        </div>
+        <div class="spinner__container">
+            <div class="spinner"></div>
+            <h3>Loading...</h3>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <div class="tooltip">
+        <p>Hr cheez km krne k leye nhi banai jati</p>
+    </div>
+    <script src="/scripts/script.js"></script>
+    <script>
+        function tooltip(){
+            document.querySelector('.tooltip').style.transform = "translateX(0)"
+            setTimeout(()=>{
+                document.querySelector('.tooltip').style.transform = "translateX(23rem)"
+            },5000)
+        }
+    </script>
+</body>
+</html>
